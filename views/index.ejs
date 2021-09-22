@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light">
+<head>
+    <%- include('./include/metadata')%>
+</head>
+
+<body class="page-home">
+    <%- include('./include/svg')%>
+    <div class="sidebar-backdrop"></div>
+    <div class="page-wrapper">
+        <%- include('./include/nav')%>
+        <main class="page-content">
+            <div class="container">
+                <section class="section">
+                    <div class="section__title d-none">
+                        <h2>Section</h2>
+                    </div>
+                    <div class="row justify-content-center gutter-bottom-xl">
+                        <div class="col-12 col-lg-7 col-xl-8 d-flex">
+                            <div class="card">
+                                <div class="card__wrapper">
+                                    <div class="card__container">
+                                        <div class="card__header">
+                                            <div class="card__header-left">
+                                                <h3 class="card__header-title">Settings</h3>
+                                            </div>
+                                            <div class="card__tools-more">
+                                                <button class="items-more__button">
+                                                    <svg class="icon-icon-more">
+                                                        <use xlink:href="#icon-more"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-items">
+                                                    <div class="dropdown-items__container">
+                                                        <ul class="dropdown-items__list">
+                                                            <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                      <svg class="icon-icon-refresh">
+                                        <use xlink:href="#icon-refresh"></use>
+                                      </svg></span>Refresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card__body">
+                                            <form action="/update" method="POST">
+                                            <div class="row row--md">
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Price</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="number" name="price" value="<%= info.price %>" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Min Amount</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="number" name="min_amount" value="<%= info.min_amount %>" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row--md">
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Coinbase Api Key</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="text" name="coinbase_api_key" value="<%= info.coinbase_api_key%>" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Coinbase Shared Secret</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="text" name="coinbase_shared_secret" value="<%= info.coinbase_shared_secret %>" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row--md">
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Wallet Address</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="text" name="wallet_address" value="<%= info.wallet_address%>" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Private Key</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="text" name="private_key" value="<%= info.private_key%>" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row--md">
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Total Supply</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="number" name="total_supply" value="<%= info.total_supply%>" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Circulationg Supply</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="number" name="circulating_supply" value="<%= info.circulating_supply%>" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row--md">
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Total Holders</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="number"  name="holders" placeholder="" value="<%= info.holders%>" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 form-group form-group--lg">
+                                                    <label class="form-label">Coin Name</label>
+                                                    <div class="input-group">
+                                                        <input class="input" type="text" placeholder="" name="name" value="<%= info.name%>" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 form-group form-group--lg">
+                                                <button class="button button--primary button--block" data-dismiss="modal" data-modal="#addProductSuccess"><span class="button__text">Update</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 col-xl-4 d-flex">
+                            <div class="card">
+                                <div class="card__wrapper">
+                                    <div class="card__container">
+                                        <div class="card__header mb-0">
+                                            <div class="card__header-left">
+                                                <h3 class="card__header-title">Profit</h3>
+                                            </div>
+                                            <div class="card__tools-more">
+                                                <button class="items-more__button">
+                                                    <svg class="icon-icon-more">
+                                                        <use xlink:href="#icon-more"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-items">
+                                                    <div class="dropdown-items__container">
+                                                        <ul class="dropdown-items__list">
+                                                            <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                      <svg class="icon-icon-refresh">
+                                        <use xlink:href="#icon-refresh"></use>
+                                      </svg></span>Refresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card__body">
+                                            <div class="card__chart">
+                                                <div class="card__chart-item chart-profit" id="profitPieChart" data-series="[<%= info.total_coin_purchased %>, <%= info.total_gas_paid%>]"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card__footer">
+                                            <div class="card__container">
+                                                <table class="card__stat">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span class="signal" style="color: #FF3D57;"></span><span>Sold</span>
+                                                            </td>
+                                                            <td><span><%= info.total_coin_purchased %> ZENITH</span>
+                                                                <!-- <span class="quotation quotation--up">
+                                                        <svg class="icon-icon-arrow-down">
+                                                        <use xlink:href="#icon-arrow-down"></use>
+                                                        </svg></span> -->
+                                                            </td>
+                                                            <!-- <td><span class="text-grey">37%</span> -->
+                                                            <!-- </td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="signal" style="color: #FDBF5E;"></span><span>Gas Fees</span>
+                                                            </td>
+                                                            <td><span>
+                                                                <%= info.total_gas_paid %> ZENITH
+                                                            </span>
+                                                                <!-- <span class="quotation quotation--down">
+                                                                <svg class="icon-icon-arrow-down">
+                                                                <use xlink:href="#icon-arrow-down"></use>
+                                                                </svg></span> -->
+                                                            </td>
+                                                            <!-- <td><span class="text-grey">35%</span>
+                                                            </td> -->
+                                                        </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <%- include('./include/javascript')%>
+</body>
+</html>

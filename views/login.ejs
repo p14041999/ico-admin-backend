@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light">
+<head>
+    <%- include('./include/metadata.ejs')%>
+</head>
+<body>
+    <%- include('./include/svg.ejs')%>
+    <div class="page-wrapper">
+        <main class="page-auth">
+            <div class="page-auth__content">
+                <div class="page-auth__bg">
+                    <img class="auth-bg-image-light" src="/img/content/auth-bg.jpg" alt="#">
+                    <!-- <img class="auth-bg-image-dark" src="img/content/auth-bg-dark.jpg" alt="#"> -->
+                </div>
+                <div class="page-auth__left">
+                    <h1 class="page-auth__title">Welcome to <span class="text-theme">Zenith</span></h1>
+                    <p class="page-auth__text">Login into you account to manage and visualize all events and functions.</p>
+                </div>
+                <div class="page-auth__right">
+                    <div class="auth-panel">
+                        <form class="auth-panel__wrapper" method="POST" action="/login">
+                            <div class="auth-panel__container">
+                                <div class="auth-panel__body">
+                                    <div class="auth-panel__body-wrapper">
+                                        <div class="auth-panel__logotype">
+                                            <div class="auth-logo">
+                                                <!-- <img class="auth-logo__icon" src="img/content/logotype.svg" width="44" alt="#" /> -->
+                                                <div class="auth-logo__text">zenith</div>
+                                            </div>
+                                            <p class="auth-panel__text">Please login to your account.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group input-group--prepend"><span class="input-group__prepend">
+                            <svg class="icon-icon-user">
+                              <use xlink:href="#icon-user"></use>
+                            </svg></span>
+                                                <input class="input" type="email" name="username" placeholder="Admin Mail ID" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="input-group input-group--prepend"><span class="input-group__prepend">
+                                                <svg class="icon-icon-password">
+                                                    <use xlink:href="#icon-password"></use>
+                                                </svg></span>
+                                                <input class="input" type="password" placeholder="Password" name="password" required>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <div class="input-group input-group--prepend">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="remember" checked><span class="checkbox__marker"><span class="checkbox__marker-icon"><svg viewBox="0 0 14 12">
+                                                            <path d="M11.7917 1.2358C12.0798 1.53914 12.0675 2.01865 11.7642 2.30682L5.7036 8.06439C5.40574 8.34735 4.93663 8.34134 4.64613 8.05084L2.22189 5.6266C1.92604 5.33074 1.92604 4.85107 2.22189 4.55522C2.51774 4.25937 2.99741 4.25937 3.29326 4.55522L5.19538 6.45734L10.7206 1.20834C11.024 0.920164 11.5035 0.93246 11.7917 1.2358Z"/>
+                                                            </svg></span></span><span class="d-inline-block ml-2">Remember Me</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="auth-panel__submit">
+                                            <button class="button button--primary button--block" type="submit"><span class="button__text">Login</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include('./include/javascript') %>
+</body>
+</html>

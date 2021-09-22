@@ -1,0 +1,72 @@
+const mongo = require('mongoose');
+
+const SettingsSchema = new mongo.Schema({
+    index:{
+        type:Number,
+        required:true,
+        unique:true,
+        select:false
+    },
+    name:{
+        type:String,
+        default:"ZENITH"
+    },
+    price:{
+        type:Number,
+        default:1.8,
+    },
+    min_amount:{
+        type:Number,
+        default:100
+    },
+    coinbase_api_key:{
+        type:String,
+        default:'a309473c-8a4e-4526-968d-39c24c449135',
+        select:false
+    },
+    coinbase_shared_secret:{
+        type:String,
+        default:'44e20fd4-b37f-4c26-8967-29ccfdc5a6e4',
+        select:false
+    },
+    wallet_address:{
+        type:String,
+        select:false
+    },
+    private_key:{
+        type:String,
+        select:false
+    },
+    total_supply:{
+        type:Number,
+        default:21000000
+    },
+    circulating_supply:{
+        type:Number,
+        default:1000000
+    },
+    holders:{
+        type:Number,
+        default:1000
+    },
+    ico_ends:{
+        type:Number,
+        required:true
+    },
+    total_coin_purchased:{
+        type:Number,
+        default:0
+    },
+    total_gas_paid:{
+        type:Number,
+        default:0
+    },
+    holders_list:[
+        {
+            address:String,
+            balance:Number
+        }
+    ]
+});
+
+module.exports = mongo.model('Settings',SettingsSchema);
