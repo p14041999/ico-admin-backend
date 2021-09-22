@@ -3,6 +3,9 @@ const admin = require('../models/admin');
 const Info = require('../models/setting');
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const user = require('../models/user');
+const purchase = require('../models/purchase');
+
 // Setup Unauthenticated Routes
 const unauthenticatedMid = (req,res,next)=>{
     
@@ -93,24 +96,17 @@ router.post('/update',authenticatedMid,async (req,res)=>{
 
 // change Password
 router.get('/change-password',authenticatedMid,async (req,res)=>{
-    let info = await Info.findOne({index:1}).select([
-        'index',
-        'name',
-        'price',
-        'min_amount',
-        'coinbase_api_key',
-        'coinbase_shared_secret',
-        'wallet_address',
-        'private_key',
-        'total_supply',
-        'circulating_supply',
-        'holders',
-        'ico_ends',
-        'total_coin_purchased',
-        'total_gas_paid',
-        'holders_list'
-    ]);
     res.render("change-password",{link:2});
+})
+router.get('/users/:page',authenticatedMid,async (req,res)=>{
+    let users = await user.find();
+    console.log(users[0])
+    res.render("users",{link:3,users:users.reverse()});
+})
+router.get('/orders/:page',authenticatedMid,async (req,res)=>{
+    let orders = await purchase.find().populate('user_id');
+    // console.log(orders[0]);
+    res.render("orders",{link:4,orders:orders.reverse()});
 })
 router.post('/update-password',authenticatedMid,async (req,res)=>{
     try {

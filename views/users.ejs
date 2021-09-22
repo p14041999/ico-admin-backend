@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-theme="light">
+<head>
+    <%- include('./include/metadata')%>
+</head>
+
+<body class="page-home">
+    <%- include('./include/svg')%>
+    <div class="sidebar-backdrop"></div>
+    <div class="page-wrapper">
+        <%- include('./include/nav')%>
+        <main class="page-content">
+            <div class="container">
+                <section class="section">
+                    <div class="section__title d-none">
+                        <h2>Section</h2>
+                    </div>
+                    <div class="row justify-content-center gutter-bottom-xl">
+                        <div class="col-12  d-flex">
+                            <div class="card">
+                                <div class="card__wrapper">
+                                    <div class="card__container">
+                                        <div class="card__header">
+                                            <div class="card__header-left">
+                                                <h3 class="card__header-title">Change Password</h3>
+                                            </div>
+                                            <div class="card__tools-more">
+                                                <button class="items-more__button">
+                                                    <svg class="icon-icon-more">
+                                                        <use xlink:href="#icon-more"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-items">
+                                                    <div class="dropdown-items__container">
+                                                        <ul class="dropdown-items__list">
+                                                            <li class="dropdown-items__item"><a class="dropdown-items__link"><span class="dropdown-items__link-icon">
+                                      <svg class="icon-icon-refresh">
+                                        <use xlink:href="#icon-refresh"></use>
+                                      </svg></span>Refresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card__body">
+                                            <table class="table table--lines">
+                                                <colgroup>
+                                                    <col class="colgroup-1">
+                                                        <col class="colgroup-2">
+                                                            <col class="colgroup-3">
+                                                </colgroup>
+                                                <thead class="table__header">
+                                                    <tr class="table__header-row">
+                                                        <th><span>Name</span>
+                                                        </th>
+                                                        <th><span>Email</span>
+                                                        </th>
+                                                        <th><span>Wallet Id</span>
+                                                        </th>
+                                                        <!-- <th><span>Balance</span>
+                                                        </th> -->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <%for(let user of users){%>
+                                                    <tr class="table__row">
+                                                        <td class="table__td">
+                                                            <div class="d-flex align-items-center">
+                                                                <svg class="icon-icon-clipboard table__icon">
+                                                                    <use xlink:href="#icon-clipboard"></use>
+                                                                </svg><span><%= user.name%></span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__td text-grey">
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="text-nowrap"><%= user.email%></span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__td">
+                                                            <div class="mw-280"><%= user.wallet_id%></div>
+                                                        </td>
+                                                        <!-- <td class="table__td">
+                                                            <div class="mw-280">ID</div>
+                                                        </td> -->
+                                                    </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                            <!-- <div class="d-flex justify-content-end">
+                                                <ol class="pagination">
+                                                    <li class="pagination__item">
+                                                        <a class="pagination__arrow pagination__arrow--prev" href="#">
+                                                            <svg class="icon-icon-keyboard-left">
+                                                                <use xlink:href="#icon-keyboard-left"></use>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                    <li class="pagination__item active"><a class="pagination__link" href="#">1</a>
+                                                    </li>
+                                                    <li class="pagination__item"><a class="pagination__link" href="#">2</a>
+                                                    </li>
+                                                    <li class="pagination__item"><a class="pagination__link" href="#">3</a>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item--dots">...</li>
+                                                    <li class="pagination__item"><a class="pagination__link" href="#">10</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a class="pagination__arrow pagination__arrow--next" href="#">
+                                                            <svg class="icon-icon-keyboard-right">
+                                                                <use xlink:href="#icon-keyboard-right"></use>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                </ol>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <%- include('./include/javascript')%>
+</body>
+</html>

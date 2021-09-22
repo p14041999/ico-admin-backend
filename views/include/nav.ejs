@@ -59,12 +59,22 @@
                 <use xlink:href="#icon-dashboard"></use>
               </svg></span><span class="sidebar__link-text">Dashboard</span></a>
                     </li>
-                    
+                    <li class="sidebar__menu-item"><a class="sidebar__link <%= link==3?'active':''%>" href="/users/1" aria-expanded="false"><span class="sidebar__link-icon">
+                        <svg class="icon-icon-contacts">
+                          <use xlink:href="#icon-contacts"></use>
+                        </svg></span><span class="sidebar__link-text">Users</span></a>
+                    </li>
+                    <li class="sidebar__menu-item"><a class="sidebar__link <%= link==4?'active':''%>" href="/orders/1" aria-expanded="false"><span class="sidebar__link-icon">
+                        <svg class="icon-icon-todo">
+                            <use xlink:href="#icon-todo"></use>
+                        </svg></span><span class="sidebar__link-text">Orders</span></a>
+                    </li>
                     <li class="sidebar__menu-item"><a class="sidebar__link <%= link==2?'active':''%>" href="/change-password" aria-expanded="false"><span class="sidebar__link-icon">
                     <svg class="icon-icon-password">
                         <use xlink:href="#icon-password"></use>
                     </svg></span><span class="sidebar__link-text">Change Password</span></a>
                     </li>
+
                 </ul>
             </nav>
         </div>
